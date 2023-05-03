@@ -30,6 +30,11 @@ Route::get("/admindashboard",[HomeController::class,'admindashboard']);
 Route::get('/allusers',[AdminController::class,'allusers']);
 Route::get('/delete_user/{id}',[AdminController::class,'delete_user']);
 
+// attendance start
+Route::post('/attendance',[AdminController::class,'attendance']);
+Route::get('/all_attendance',[AdminController::class,'all_attendance']);
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -39,6 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';

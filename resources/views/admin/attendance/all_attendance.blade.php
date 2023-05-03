@@ -20,60 +20,59 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    <h1 class="h3 mb-0 text-gray-800">All Attendance List</h1>
     <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 </div>
 
 <!-- Content Row -->
 <div class="row">
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-6 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                          Total User</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-6 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                         Admin</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+<table class=" table table-bordered">
+  <thead>
+    <tr class=" bg-primary text-white border" >
+      <!-- <th scope="col">No</th> -->
+      <th scope="col">Full Name</th>
+      <th scope="col">Employee Number</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Day</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Customer Feedback</th>
+      <th scope="col">Expenses</th>
+      <th scope="col">Expenses Description</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($all_attendances as $all_attendances)
+    <tr class="border text-dark ">
+      <!-- <th scope="row">{{$all_attendances->id}}</th> -->
+      <td>{{$all_attendances->fullname}}</td>
+      <td>{{$all_attendances->employee_number}}</td>
+      <td>{{$all_attendances->address}}</td>
+      <td>{{$all_attendances->phone_number}}</td>
+      <td>{{$all_attendances->day}}</td>
+      <td>{{$all_attendances->date}}</td>
+      <td>{{$all_attendances->time}}</td>
+      <td>{{$all_attendances->customer_feedback}}</td>
+      <td>{{$all_attendances->expenses}}</td>
+      <td>{{$all_attendances->expenses_des}}</td>
+      
+       
+     
+    </tr>
+    @endforeach
+  </tbody>
+</table>
 </div>
-
-<!-- Content Row -->
 
 
 <!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->
+
 
 <!-- Footer -->
 <footer class="sticky-footer  bg-primary text-white adminfooter">
@@ -84,7 +83,6 @@
 </div>
 </footer>
 <!-- End of Footer -->
-
 </div>
 <!-- End of Content Wrapper -->
 

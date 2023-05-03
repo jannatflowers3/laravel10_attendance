@@ -1,6 +1,6 @@
 header {
     min-height: 545px;
- background-image: url("images/headerbg.jpg");
+ background-image: url("images/bg.jpg");
  background-repeat: no-repeat;
  background-size: cover;
  color: #fff;
@@ -35,7 +35,7 @@ header {
     padding: 1px 0px;
     min-height: 180px;
     text-align: center;
-    box-shadow: 0 15px 10px red;
+    box-shadow: 0 15px 10px #26306e;
   }
   .contactpart_one h1, .contactpart_second h1, .contactpart_third h1{
   padding: 10px 0px;
@@ -45,7 +45,7 @@ header {
     margin-top: 170px;
   }
   footer{
-    background-color: #000;
+    background-color: #26306e;
     padding: 20px 0px;
     text-align: center;
     color: #fff;

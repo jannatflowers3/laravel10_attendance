@@ -68,7 +68,7 @@
 <footer class="sticky-footer  bg-primary text-white adminfooter">
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-    <span>  © Copyright 2021 A & A Consulting Limited - All Rights Reserved</span>
+    <span>  © Copyright 2023 A & A Consulting Limited - All Rights Reserved</span>
 </div>
 </div>
 </footer>
