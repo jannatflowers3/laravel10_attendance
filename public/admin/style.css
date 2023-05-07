@@ -5,3 +5,31 @@
     font-size: 16px;
     font-weight: 700;
 }
+.top_header{
+    margin-left: 10px;
+    margin-left: 250px;
+    color: #4e73df!important;
+    font-weight: 700;
+  }
+  .report_searchbtn{
+    /* margin: 30px 0px; */
+  }
+ .report_searchbtn label{
+    font-weight: 700;
+    color:#4e73df;
+    padding-right: 30px;
+    padding-top: 10px;
+ }
+ 
+  .date_report{
+    color: #4e73df!important;
+    font-weight: 700;
+  }
+.report_submit{
+    border: 2px solid #4e73df;
+    border-radius: 10px;
+    background-color: #4e73df!important;
+    color: #fff;
+    padding: 7px 30px;
+    margin-left: 20px;
+}

@@ -29,10 +29,14 @@ Route::get("/admindashboard",[HomeController::class,'admindashboard']);
 
 Route::get('/allusers',[AdminController::class,'allusers']);
 Route::get('/delete_user/{id}',[AdminController::class,'delete_user']);
+Route::get('/alltendance_delete/{id}',[AdminController::class,'alltendance_delete']);
 
 // attendance start
 Route::post('/attendance',[AdminController::class,'attendance']);
 Route::get('/all_attendance',[AdminController::class,'all_attendance']);
+// Route::get('/attendance_report',[AdminController::class,'attendance_report']);
+Route::get('/search_report',[AdminController::class,'search_report']);
+Route::get('/search_date',[AdminController::class,'date_search']);
 
 
 

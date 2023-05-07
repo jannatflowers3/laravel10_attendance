@@ -47,6 +47,11 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header"> Attendance:</h6>
             <a class="collapse-item" href="{{url('/all_attendance')}}">All Attendance</a>
+            <!-- <a class="collapse-item" href="{{url('/attendance_report')}}"> Attendance Report</a> -->
+           
+            <a class="collapse-item" href="{{url('/search_date')}}"> Date Search </a>
+            <a class="collapse-item" href="{{url('/search_report')}}">  Name Search</a>
+            
             
             
         </div>

@@ -1,3 +1,5 @@
+
+
 @include('admin.header')
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -5,25 +7,44 @@
           @include('admin.leftsidebar')
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
                   @include('admin.topsitebar')
                 <!-- Begin Page Content -->
 <!-- 
                 @yield('content') -->
-
                 <div class="container-fluid">
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">All Attendance List</h1>
-    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+    <h1 class="h3 mb-0 text-gray-800"> Attendance Report</h1>
 </div>
 
 <!-- Content Row -->
 <div class="row" style="overflow-x:auto;">
+
+
+<div class=col-lg-10>
+
+
+</div>
+
+<div class="col-lg-4 ml-auto ">
+    <form action="{{url('/search_report')}}" method="get">
+        @csrf
+<div class="input-group rounded report_searchbtn">
+    <label for="attendance_label"> User Name : </label>
+  <input type="search" class="form-control rounded" id="attendance_label" name="search_username" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+</div>
+</form>
+
+
+</div>
+
+
 <table class=" table table-bordered" >
   <thead>
     <tr class="bg-primary text-white border" >
@@ -44,28 +65,40 @@
   </thead>
   <tbody>
 
-    @foreach($all_attendances as $all_attendances)
-    <tr class="border text-dark ">
-      <!-- <th scope="row">{{$all_attendances->id}}</th> -->
-      <td>{{$all_attendances->id}}</td>
-      <td>{{$all_attendances->fullname}}</td>
-      <td>{{$all_attendances->employee_number}}</td>
-      <td>{{$all_attendances->address}}</td>
-      <td>{{$all_attendances->phone_number}}</td>
-      <td>{{$all_attendances->day}}</td>
-      <td>{{$all_attendances->date}}</td>
-      <td>{{$all_attendances->time}}</td>
-      <td>{{$all_attendances->customer_feedback}}</td>
-      <td>{{$all_attendances->expenses}}</td>
-      <td>{{$all_attendances->expenses_des}}</td>
-      <td>  <a href="{{url('/alltendance_delete',$all_attendances->id)}}" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td>
+@foreach($user_attendances as $all_attendances)
+<tr class="border text-dark ">
+  <!-- <th scope="row">{{$all_attendances->id}}</th> -->
+  <td>{{$all_attendances->id}}</td>
+  <td>{{$all_attendances->fullname}}</td>
+  <td>{{$all_attendances->employee_number}}</td>
+  <td>{{$all_attendances->address}}</td>
+  <td>{{$all_attendances->phone_number}}</td>
+  <td>{{$all_attendances->day}}</td>
+  <td>{{$all_attendances->date}}</td>
+  <td>{{$all_attendances->time}}</td>
+  <td>{{$all_attendances->customer_feedback}}</td>
+  <td>{{$all_attendances->expenses}}</td>
+  <td>{{$all_attendances->expenses_des}}</td>
+  <!-- <td>  <a href="{{url('/alltendance_delete',$all_attendances->id)}}" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td> -->
 
-      
-       
-     
-    </tr>
-    @endforeach
-  </tbody>
+  
+ 
+<!--   
+  <td>{{$all_attendances->id}}</td>
+  <td>{{$all_attendances->fullname}}</td>
+  <td>{{$all_attendances->employee_number}}</td>
+  <td>{{$all_attendances->address}}</td>
+  <td>{{$all_attendances->phone_number}}</td>
+  <td>{{$all_attendances->day}}</td>
+  <td>{{$all_attendances->date}}</td>
+  <td>{{$all_attendances->time}}</td>
+  <td>{{$all_attendances->customer_feedback}}</td>
+  <td>{{$all_attendances->expenses}}</td>
+  <td>{{$all_attendances->expenses_des}}</td>
+   -->
+</tr>
+@endforeach
+</tbody>
 </table>
 </div>
 
