@@ -22,35 +22,31 @@
 
 <!-- Content Row -->
 <div class="row" style="overflow-x:auto;">
-
-
+<!-- date report start -->
 <div class=col-lg-10>
+  <div class="date_report">
 <form action="{{url('/search_date')}}" method="get">
         @csrf
-
-
-<label for="start_date" class="date_report text-dark fw-700">Start Date </label>
+<label for="start_date" class="date_report text-dark fw-700">Start Date : </label>
   <input type="date" id="start_date" name="start_date">
   <!-- end date -->
-  <label for="end_date" class="date_report text-dark fw-700">Start Date </label>
+  <label for="end_date" class="date_report text-dark fw-700">End Date  :</label>
   <input type="date" id="end_date" name="end_date">
   <input type="submit" name ="datereport_submit" class="report_submit">
 
 </div>
-</form>
-
-
 </div>
-
-
-
-
+</form>
+</div>
+<!-- date end -->
+@include('sweetalert::alert')
+<div class="tablelist" style="overflow-x:auto;">
 <table class=" table table-bordered" >
   <thead>
     <tr class="bg-primary text-white border" >
       <!-- <th scope="col">No</th> -->
-      <th scope="col">Full Name</th>
       <th scope="col">ID</th>
+      <th scope="col">Full Name</th>
       <th scope="col">Employee Number</th>
       <th scope="col">Address</th>
       <th scope="col">Phone</th>
@@ -60,6 +56,7 @@
       <th scope="col">Customer Feedback</th>
       <th scope="col">Expenses</th>
       <th scope="col">Expenses Description</th>
+      <th scope="col">Comment</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -68,13 +65,6 @@
 @foreach($date_report as $all_attendances)
 <tr class="border text-dark ">
   <th scope="row">{{$all_attendances->id}}</th>
- 
-  <!-- <td>  <a href="{{url('/alltendance_delete',$all_attendances->id)}}" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td> -->
-
-  
- 
-  
-  <td>{{$all_attendances->id}}</td>
   <td>{{$all_attendances->fullname}}</td>
   <td>{{$all_attendances->employee_number}}</td>
   <td>{{$all_attendances->address}}</td>
@@ -85,13 +75,19 @@
   <td>{{$all_attendances->customer_feedback}}</td>
   <td>{{$all_attendances->expenses}}</td>
   <td>{{$all_attendances->expenses_des}}</td>
+  <td>{{$all_attendances->comment}}</td>
   
+  <td>  <a href="{{url('/alltendance_delete',$all_attendances->id)}}" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td>
+
 </tr>
 @endforeach
+
 </tbody>
 </table>
-</div>
 
+</div>
+</div>
+{!! $paginations->withQueryString()->links('pagination::bootstrap-5') !!}
 
 <!-- /.container-fluid -->
 

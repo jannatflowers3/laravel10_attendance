@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 5 Website Example</title>
+  <title>A & A Daily Attendance</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,7 +16,7 @@
      <div class="row justify-content-center">
      <div class="col-lg-10 text-center">
        <div class="headerbody">
-         <h1>A & A Daily Attendence</h1>
+         <h1 class="text-center">A & A Daily Attendance</h1>
          <p>Here is the daily attendance time sheet for contractor and employees.</p>
     </div>
   </div>
@@ -26,7 +26,7 @@
     @if (Route::has('login'))
                 <div class="loginauthentication">
                     @auth
-                        <a href="{{ url('dashboard') }}" >Attendence</a>
+                        <a href="{{ url('dashboard') }}" >Attendance</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         

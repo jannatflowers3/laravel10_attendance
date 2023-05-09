@@ -10,7 +10,7 @@ header {
 
   }
   .headerbody h1{
-    font-size: 45px;
+    font-size: 40px;
     padding: 8px 0px;
 
   }
@@ -25,7 +25,7 @@ header {
   .loginauthentication a{
     color: #fff;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     padding: 10px 4px;
   }
@@ -50,3 +50,6 @@ header {
     text-align: center;
     color: #fff;
   }
+.attendancebg{
+  background-color: red!important;
+}

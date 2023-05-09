@@ -32,3 +32,13 @@
         color: #000;
         font-weight: 800;
     }
+    .mainlogo{
+        width: 100px;
+        height: 100px;
+    }
+    .attendancebg{
+        background-image: url("images/bg.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ 
+    }

@@ -19,16 +19,11 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"> Attendance Report</h1>
 </div>
-
+@include('sweetalert::alert')
 <!-- Content Row -->
-<div class="row" style="overflow-x:auto;">
-
-
+<div class="row" >
 <div class=col-lg-10>
-
-
 </div>
-
 <div class="col-lg-4 ml-auto ">
     <form action="{{url('/search_report')}}" method="get">
         @csrf
@@ -36,75 +31,65 @@
     <label for="attendance_label"> User Name : </label>
   <input type="search" class="form-control rounded" id="attendance_label" name="search_username" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
   <span class="input-group-text border-0" id="search-addon">
-    <i class="fas fa-search"></i>
+    <!-- <i class="fas fa-search"></i> -->
   </span>
 </div>
 </form>
-
-
 </div>
 
-
+<div class="tablelist" style="overflow-x:auto;">
 <table class=" table table-bordered" >
   <thead>
     <tr class="bg-primary text-white border" >
-      <!-- <th scope="col">No</th> -->
+    <th scope="col">ID</th>
       <th scope="col">Full Name</th>
-      <th scope="col">ID</th>
       <th scope="col">Employee Number</th>
       <th scope="col">Address</th>
       <th scope="col">Phone</th>
       <th scope="col">Day</th>
-      <th scope="col">Date</th>
+      <th scope="col" class="date_width">Date</th>
       <th scope="col">Time</th>
       <th scope="col">Customer Feedback</th>
       <th scope="col">Expenses</th>
       <th scope="col">Expenses Description</th>
+      <th scope="col">Comment</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
 
-@foreach($user_attendances as $all_attendances)
+@foreach($user_attendances as $user_attendance)
 <tr class="border text-dark ">
-  <!-- <th scope="row">{{$all_attendances->id}}</th> -->
-  <td>{{$all_attendances->id}}</td>
-  <td>{{$all_attendances->fullname}}</td>
-  <td>{{$all_attendances->employee_number}}</td>
-  <td>{{$all_attendances->address}}</td>
-  <td>{{$all_attendances->phone_number}}</td>
-  <td>{{$all_attendances->day}}</td>
-  <td>{{$all_attendances->date}}</td>
-  <td>{{$all_attendances->time}}</td>
-  <td>{{$all_attendances->customer_feedback}}</td>
-  <td>{{$all_attendances->expenses}}</td>
-  <td>{{$all_attendances->expenses_des}}</td>
-  <!-- <td>  <a href="{{url('/alltendance_delete',$all_attendances->id)}}" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td> -->
 
-  
- 
-<!--   
-  <td>{{$all_attendances->id}}</td>
-  <td>{{$all_attendances->fullname}}</td>
-  <td>{{$all_attendances->employee_number}}</td>
-  <td>{{$all_attendances->address}}</td>
-  <td>{{$all_attendances->phone_number}}</td>
-  <td>{{$all_attendances->day}}</td>
-  <td>{{$all_attendances->date}}</td>
-  <td>{{$all_attendances->time}}</td>
-  <td>{{$all_attendances->customer_feedback}}</td>
-  <td>{{$all_attendances->expenses}}</td>
-  <td>{{$all_attendances->expenses_des}}</td>
-   -->
+  <td>{{$user_attendance->id}}</td>
+  <td>{{$user_attendance->fullname}}</td>
+  <td>{{$user_attendance->employee_number}}</td>
+  <td>{{$user_attendance->address}}</td>
+  <td>{{$user_attendance->phone_number}}</td>
+  <td>{{$user_attendance->day}}</td>
+  <td >{{$user_attendance->date}}</td>
+  <td>{{$user_attendance->time}}</td>
+  <td>{{$user_attendance->customer_feedback}}</td>
+  <td>{{$user_attendance->expenses}}</td>
+  <td>{{$user_attendance->expenses_des}}</td>
+  <td>{{$user_attendance->comment}}</td>
+  <td>  <a href="{{url('/alltendance_delete',$user_attendance->id)}}" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td>
+
+
 </tr>
 @endforeach
+
 </tbody>
 </table>
+
 </div>
+</div>
+
+{!! $paginations->withQueryString()->links('pagination::bootstrap-5') !!}
 
 
 <!-- /.container-fluid -->
-
+<!-- {{ $paginations->links() }} -->
 </div>
 <!-- End of Main Content -->
 

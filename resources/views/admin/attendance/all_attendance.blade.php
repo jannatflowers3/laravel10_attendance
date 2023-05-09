@@ -21,7 +21,7 @@
     <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
 </div>
-
+@include('sweetalert::alert')
 <!-- Content Row -->
 <div class="row" style="overflow-x:auto;">
 <table class=" table table-bordered" >
@@ -39,6 +39,7 @@
       <th scope="col">Customer Feedback</th>
       <th scope="col">Expenses</th>
       <th scope="col">Expenses Description</th>
+      <th scope="col">Comment</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -58,6 +59,7 @@
       <td>{{$all_attendances->customer_feedback}}</td>
       <td>{{$all_attendances->expenses}}</td>
       <td>{{$all_attendances->expenses_des}}</td>
+      <td>{{$all_attendances->comment}}</td>
       <td>  <a href="{{url('/alltendance_delete',$all_attendances->id)}}" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td>
 
       
