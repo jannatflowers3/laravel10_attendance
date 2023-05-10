@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="admin/img/logo.jpg">
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -59,7 +60,7 @@
      <div class="contactpart_second">
        <h1>Email </h1>
          <p> 
-         Email : info@dataparkbd.com </p>
+         Email :  info@aaconsulting.tech </p>
       </div>
     </div>
 
@@ -75,11 +76,10 @@
    </div>
   </div>
 </div>
-
  <!-- contact end -->
 </header>
 <Footer >
-  <p>Copyright © 2023  | All Rights Reserved By A & A Consulting Limited.</p>
+  <p>Copyright © 2023  | All Rights Reserved by A & A Consulting Limited.</p>
 </Footer>
 </body>
 </html>

@@ -60,7 +60,7 @@
       <td>{{$all_attendances->expenses}}</td>
       <td>{{$all_attendances->expenses_des}}</td>
       <td>{{$all_attendances->comment}}</td>
-      <td>  <a href="{{url('/alltendance_delete',$all_attendances->id)}}" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td>
+      <td>  <a href="{{url('/alltendance_delete',$all_attendances->id)}}" onclick="return confirm('Are you sure?')" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td>
 
       
        

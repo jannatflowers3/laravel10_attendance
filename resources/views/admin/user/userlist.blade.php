@@ -5,17 +5,12 @@
           @include('admin.leftsidebar')
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
-
                   @include('admin.topsitebar')
                 <!-- Begin Page Content -->
 <!-- 
                 @yield('content') -->
-
-
-
                 <div class="container-fluid">
 
 <!-- Page Heading -->
@@ -42,28 +37,20 @@
       <th scope="row">{{$data->id}}</th>
       <td>{{$data->name}}</td>
       <td>{{$data->email}}</td>
-      
         @if($data->user_type=='0')
         <!-- <a href="/" class="bg-success text-white p-2"> Edit </a> -->
-        <td>  <a href="{{url('/delete_user',$data->id)}}" class="bg-warning text-white p-2 text-decoration-none"> Delete </a> </td>
+        <td>  <a href="{{url('/delete_user',$data->id)}}" class="bg-warning text-white p-2 text-decoration-none" onclick="return confirm('Are you sure?')"> Delete </a> </td>
         @else
         <td>  <a href="{{url('/allusers')}}" class="bg-danger text-white p-2 text-decoration-none"> Not Allowed </a> </td>
-        
         @endif
-     
     </tr>
     @endforeach
   </tbody>
 </table>
 </div>
-
-
 <!-- /.container-fluid -->
-
 </div>
 <!-- End of Main Content -->
-
-
 <!-- Footer -->
 <footer class="sticky-footer  bg-primary text-white adminfooter">
 <div class="container my-auto">
@@ -75,15 +62,12 @@
 <!-- End of Footer -->
 </div>
 <!-- End of Content Wrapper -->
-
 </div>
 <!-- End of Page Wrapper -->
-
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
 <i class="fas fa-angle-up"></i>
 </a>
-
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 aria-hidden="true">
@@ -103,5 +87,4 @@ aria-hidden="true">
 </div>
 </div>
 </div>
-
-    @include('admin.footer')
+   @include('admin.footer')

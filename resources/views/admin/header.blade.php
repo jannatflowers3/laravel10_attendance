@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="icon" type="image/x-icon" href="admin/img/logo.jpg">
     <title>A & A Daily Attendence</title>
 
     <!-- Custom fonts for this template-->

@@ -57,10 +57,8 @@
     </tr>
   </thead>
   <tbody>
-
 @foreach($user_attendances as $user_attendance)
 <tr class="border text-dark ">
-
   <td>{{$user_attendance->id}}</td>
   <td>{{$user_attendance->fullname}}</td>
   <td>{{$user_attendance->employee_number}}</td>
@@ -73,7 +71,7 @@
   <td>{{$user_attendance->expenses}}</td>
   <td>{{$user_attendance->expenses_des}}</td>
   <td>{{$user_attendance->comment}}</td>
-  <td>  <a href="{{url('/alltendance_delete',$user_attendance->id)}}" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td>
+  <td>  <a href="{{url('/alltendance_delete',$user_attendance->id)}}" onclick="return confirm('Are you sure?')" class="bg-danger text-white p-2 text-decoration-none"> Delete </a> </td>
 
 
 </tr>

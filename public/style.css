@@ -12,11 +12,13 @@ header {
   .headerbody h1{
     font-size: 40px;
     padding: 8px 0px;
-
+    margin-left: 30px;
+    margin-left: 110px;
   }
   .headerbody p{
    text-align: center;
    font-size: 15px;
+   margin-left: 114px;
   }
   .loginauthentication{
  margin-top: 50px;
@@ -29,20 +31,20 @@ header {
     font-weight: 700;
     padding: 10px 4px;
   }
-
   .contactpart_one, .contactpart_second, .contactpart_third{
     /* border:1px solid red; */
     padding: 1px 0px;
     min-height: 180px;
     text-align: center;
-    box-shadow: 0 15px 10px #26306e;
+    box-shadow: 0 15px 10px 20px #26306e;
+    /* box-shadow: 0 3px 10px rgba(177, 33, 33, 0.2); */
   }
   .contactpart_one h1, .contactpart_second h1, .contactpart_third h1{
   padding: 10px 0px;
   font-size: 20px;
   }
   .contactinfo{
-    margin-top: 170px;
+    margin-top: 180px;
   }
   footer{
     background-color: #26306e;

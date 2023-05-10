@@ -42,3 +42,15 @@
  background-size: cover;
  
     }
+.registration_heading{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 800;
+    color: #fff;
+}
+.img_rounded{
+    border-radius: 50px;
+}
+ 

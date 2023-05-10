@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <link rel="icon" type="image/x-icon" href="admin/img/logo.jpg"><link rel="icon" type="image/x-icon" href="admin/img/logo.jpg">
   <link href="registration.css" rel="stylesheet">
 </head>
 <body>
@@ -49,7 +49,7 @@
                 <div class="col-md-12 mb-4">
                   <div class="form-outline">
                   <label class="form-label" for="firstName">Full Name :</label>
-                    <input type="text" id="firstName" name="fullname" class="form-control form-control-lg  @error('fullname') is-invalid @enderror" />
+                    <input type="text" id="firstName" name="fullname"  value="{{old('fullname')}}" class="form-control form-control-lg  @error('fullname') is-invalid @enderror" />
                     @error('fullname')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror                 
@@ -59,20 +59,21 @@
                 <div class="col-md-12 mb-4 pb-2">
                   <div class="form-outline">
                   <label class="form-label" for="employee_number">Employee Number :</label>
-                    <input type="number" id="employee_number" name="employee_number" class="form-control form-control-lg  @error('employee_number') is-invalid @enderror" />     
+                    <input type="number" id="employee_number" name="employee_number" value="{{old('employee_number')}}"  class="form-control form-control-lg  @error('employee_number') is-invalid @enderror" />     
                     @error('employee_number')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
                   </div>
                 </div>
              </div>
+
             <!-- address  start -->
          <!-- address start -->
    <div class="row">
              <div class="col-md-12 mb-4 pb-2">
                             <div class="form-outline">
                             <label class="form-label" for="address">Address :</label>  
-                                  <input type="text" id="address" name="address" class="form-control form-control-lg  @error('address') is-invalid @enderror" />
+                                  <input type="text" id="address" name="address" value="{{old('address')}}" class="form-control form-control-lg  @error('address') is-invalid @enderror" />
                                   @error('address')
                     <span class="text-danger">{{ $message }}</span>
                           @enderror
@@ -83,7 +84,7 @@
                 <div class="col-md-6 mb-4 pb-2">
                   <div class="form-outline">
                   <label class="form-label" for="phoneNumber">Phone Number :</label>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control form-control-lg  @error('phoneNumber') is-invalid @enderror" />
+                    <input type="tel" id="phoneNumber" name="phoneNumber" value="{{old('phoneNumber')}}" class="form-control form-control-lg  @error('phoneNumber') is-invalid @enderror" />
                     @error('phoneNumber')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -92,15 +93,15 @@
                 <div class="col-md-6 mb-4 pb-2">
                       <div class="form-outline">
                             <label class="form-label " for="day">Day :</label>  <br>
-                            <select  class="form-select @error('day') is-invalid @enderror" id="day" name="day">
+                            <select  class="form-select @error('day') is-invalid @enderror" id="day" name="day"  >
                     <option value="Choose option" selected disabled>Choose option</option>
-                    <option value="Saturday">Saturday</option>
-                    <option value="Sunday">Sunday</option>
-                    <option value="Monday">Monday</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Wednesday">Wednesday</option>
-                    <option value="Thursday">Thursday</option>
-                    <option value="Friday">Friday</option>
+                    <option value="Saturday" value=" {{ old('name', $DB->default-value) == 'Saturday' ? 'selected' : '' }}">Saturday</option>
+                    <option value="Sunday" value="{{old('Sunday')}}">Sunday</option>
+                    <option value="Monday" value="{{old('Monday')}}">Monday</option>
+                    <option value="Tuesday" value="{{old('Tuesday')}}">Tuesday</option>
+                    <option value="Wednesday" value="{{old('Wednesday')}}">Wednesday</option>
+                    <option value="Thursday" value="{{old('Thursday')}}">Thursday</option>
+                    <option value="Friday" value="{{old('daFridayy')}}">Friday</option>             
                   </select> 
                            @error('day')
                                     <div class="invalid-feedback">{{$message}}</div>
@@ -115,7 +116,7 @@
                 <div class="col-md-6 mb-4 pb-2">
                   <div class="form-outline">
                   <label class="form-label" for="date">Date :</label>
-                    <input type="date" id="date" name="date" class="form-control form-control-lg  @error('date') is-invalid @enderror" />
+                    <input type="date" id="date" value="{{old('date')}}" name="date" class="form-control form-control-lg  @error('date') is-invalid @enderror" />
                     @error('date')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -124,7 +125,7 @@
                 <div class="col-md-6 mb-4 pb-2">
                   <div class="form-outline">
                   <label class="form-label" for="time">Time:</label>
-                    <input type="time" id="time" name="time" class="form-control form-control-lg  @error('time') is-invalid @enderror" />
+                    <input type="time" id="time" name="time" value="{{old('time')}}" class="form-control form-control-lg  @error('time') is-invalid @enderror" />
                     @error('time')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -137,7 +138,7 @@
               <div class="col-md-12 mb-4 pb-2">
                             <div class="form-outline">
                             <label class="form-label" for="cus_feedback">Feedback from the Customer :</label>  
-                                  <input type="text" id="cus_feedback" name="cus_feedback" class="form-control form-control-lg  @error('cus_feedback') is-invalid @enderror" />
+                                  <input type="text" id="cus_feedback" value="{{old('cus_feedback')}}"  name="cus_feedback" class="form-control form-control-lg  @error('cus_feedback') is-invalid @enderror" />
                                   @error('cus_feedback')
                     <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -150,7 +151,7 @@
                 <div class="col-md-6 mb-4 pb-2">
                   <div class="form-outline">
                   <label class="form-label" for="expenses">Expenses :</label>
-                    <input type="number" id="expenses" name ="expenses" class="form-control form-control-lg  @error('expenses') is-invalid @enderror" />
+                    <input type="number" id="expenses" name ="expenses"  value="{{old('expenses')}}" class="form-control form-control-lg  @error('expenses') is-invalid @enderror" />
                     @error('expenses')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -160,7 +161,7 @@
                 <div class="col-md-6 mb-4 pb-2">
                   <div class="form-outline">
                   <label class="form-label" for="express_details">Expenses  Description :</label>
-                    <input type="text" id="express_details" name="express_details" class="form-control form-control-lg  @error('express_details') is-invalid @enderror" />
+                    <input type="text" id="express_details"  value="{{old('express_details')}}"  name="express_details " class="form-control form-control-lg  @error('express_details') is-invalid @enderror" />
                     @error('express_details')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror

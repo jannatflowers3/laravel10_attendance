@@ -48,7 +48,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/search_report', [AdminController::class, 'search_report']);
+    Route::get('/allusers', [AdminController::class, 'allusers']);
+    Route::get('/search_date', [AdminController::class, 'date_search']);
+    Route::get('/admindashboard', [HomeController::class, 'admindashboard']);
+    // search_report    allusers admindashboard search_date
 });
 
 require __DIR__.'/auth.php';
